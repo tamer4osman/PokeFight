@@ -1,17 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-const apiRouter = require("./routes/api.js"); // Import the api.js file
+const pokemonRouter = require("./routes/pokemonRoutes.js"); // Import the api.js file
+const cors = require("cors");
 dotenv.config();
 
 const app = express();
 
 const port = process.env.PORT || 3000;
 
-// Specify the directory for views
-
+app.use(cors());
 app.use(bodyParser.json());
-app.use("/api", apiRouter);
+app.use("/pokemon", pokemonRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

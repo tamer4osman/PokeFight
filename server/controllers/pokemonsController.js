@@ -1,1 +1,0 @@
-const pokemonsData = require("../data/pokedex.json");
