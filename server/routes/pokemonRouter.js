@@ -1,16 +1,16 @@
 import {Router} from "express";
 // // import { getAllPosts, getSinglePost, createPost, editSinglePost, deleteSinglePost } from "../controllers/ecaControllers.js";
-import { getData, getId, getIdName } from "../controllers/pokemonController.js";
+import { getPokemonData, getPokemonId, getPokemonInfoById } from "../controllers/pokemonController.js";
  const app = Router();
 
 //  GET /getData
- app.get("/pokemon", getData);
+ app.get("/pokemon", getPokemonData);
 
 // GET /getPokemon/:id
- app.get("/pokemon/:id", getId);
+ app.get("/pokemon/:id", getPokemonId);
 
 // Get /pokemon/:id/:info 
-app.get("/pokemon/:id/:info", getIdName);
+app.get("/pokemon/:id/:info", getPokemonInfoById );
 
 //  PUT /editSinglePost/:id
 //  app.put("/editSinglePost/:id", editSinglePost);

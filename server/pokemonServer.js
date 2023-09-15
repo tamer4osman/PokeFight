@@ -5,6 +5,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import pokemonRouter from "./routes/pokemonRouter.js";
 import poke from './pokedex.json' assert { type: "json" };
+// import mongodb from "../db/mongodb.js";
+// import db from './db/mongodb.js';
 
 
 import { readFile } from 'fs/promises';
@@ -14,6 +16,8 @@ let jsonData = JSON.parse(await readFile(new URL('./pokedex.json', import.meta.u
 
 const app = express();
 dotenv.config();
+
+
 const port = process.env.PORT || 5000;
  app.use(cors())
 // app.use(bodyParser.json());
@@ -22,6 +26,7 @@ const port = process.env.PORT || 5000;
 
 app.use(pokemonRouter);
 
+// app.use('/game', require('./routes/game'));
 // app.get('/pokemon', (req, res) => {
 //     res.send(jsonData);
 //     });
